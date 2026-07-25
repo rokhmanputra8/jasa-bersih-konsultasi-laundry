@@ -104,6 +104,50 @@
             box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
         }
 
+        .btn-phone {
+            display: inline-block;
+            background-color: #0b5ed7;
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(11, 94, 215, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .btn-phone:hover {
+            background-color: #0a4eb4;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(11, 94, 215, 0.4);
+        }
+
+        .btn-email {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(255, 152, 0, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .btn-email:hover {
+            background-color: #f57c00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 152, 0, 0.4);
+        }
+
         section {
             padding: 40px 20px;
             max-width: 1100px;
@@ -233,6 +277,16 @@
             margin-bottom: 20px;
         }
 
+        .contact-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .contact-buttons a {
+            text-align: center;
+        }
+
         footer {
             background-color: #111;
             color: rgba(255, 255, 255, 0.8);
@@ -253,6 +307,16 @@
             color: var(--text-light);
         }
 
+        .contact-info {
+            margin: 15px 0;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .contact-info strong {
+            color: #fff;
+        }
+
         @media (max-width: 600px) {
             header h1 { font-size: 28px; }
             header h2 { font-size: 20px; }
@@ -260,15 +324,19 @@
             section { grid-template-columns: 1fr; padding: 20px; }
             .price-table th, .price-table td { padding: 10px 8px; font-size: 14px; }
             .gallery { grid-template-columns: repeat(2, 1fr); }
+            .contact-buttons {
+                flex-direction: column;
+            }
         }
     </style>
     
     <!-- Script Pelacak Event Klik Tombol -->
     <script>
-        function lacakKlikWhatsApp(lokasiTombol) {
+        function lacakKlik(tipeKontak, lokasiTombol) {
             // 1. Mengirim data ke Google Analytics 4
             if(typeof gtag !== 'undefined') {
-                gtag('event', 'click_whatsapp', {
+                gtag('event', 'click_contact', {
+                    'contact_type': tipeKontak,
                     'button_location': lokasiTombol
                 });
             }
@@ -276,7 +344,7 @@
             // 2. Mengirim data ke Meta Pixel (Facebook Pixel)
             if(typeof fbq !== 'undefined') {
                 fbq('track', 'Contact', { 
-                    content_name: 'Tombol WhatsApp ' + lokasiTombol 
+                    content_name: 'Tombol ' + tipeKontak + ' - ' + lokasiTombol 
                 });
             }
         }
@@ -288,7 +356,10 @@
         <h1>Jasa Bersih-Bersih</h1>
         <h2>&amp; Konsultasi Laundry</h2>
         <p>Bersih • Cepat • Profesional • Terpercaya</p>
-        <a class="btn" href="https://wa.me/6283161422617?text=Halo%20saya%20ingin%20berkonsultasi%20tentang%20jasa%20bersih-bersih" target="_blank" onclick="lacakKlikWhatsApp('Header Top')">Hubungi WhatsApp</a>
+        <div style="display: flex; flex-direction: column; gap: 10px; align-items: center;">
+            <a class="btn" href="tel:6283161422617" onclick="lacakKlik('Telepon', 'Header Top')">☎️ Hubungi via Telepon</a>
+            <a class="btn-email" href="mailto:info@bersih-laundry.com?subject=Konsultasi%20Jasa%20Bersih-Bersih" onclick="lacakKlik('Email', 'Header Top')">📧 Kirim Email</a>
+        </div>
     </header>
 
     <section>
@@ -386,14 +457,22 @@
         <div class="contact-card">
             <h2>Hubungi Kami Sekarang</h2>
             <p>Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan Anda</p>
-            <a class="btn" href="https://wa.me/6283161422617?text=Halo%20saya%20ingin%20berkonsultasi%20tentang%20jasa%20bersih-bersih" target="_blank" onclick="lacakKlikWhatsApp('Contact Section')">Chat WhatsApp Sekarang</a>
+            <div class="contact-buttons">
+                <a class="btn-phone" href="tel:6283161422617" onclick="lacakKlik('Telepon', 'Contact Section')">☎️ Hubungi via Telepon</a>
+                <a class="btn-email" href="mailto:info@bersih-laundry.com?subject=Konsultasi%20Jasa%20Bersih-Bersih" onclick="lacakKlik('Email', 'Contact Section')">📧 Kirim Email</a>
+            </div>
         </div>
     </section>
 
     <footer>
         <h3>Jasa Bersih-Bersih & Konsultasi Laundry</h3>
         <p>&copy; 2024 Semua Hak Dilindungi. Kami siap melayani Anda dengan sepenuh hati.</p>
-        <p>Hubungi: <strong>WhatsApp: 0831-6142-2617</strong> | Email: <strong>info@bersih-laundry.com</strong></p>
+        
+        <div class="contact-info">
+            <strong>📞 Hubungi Kami:</strong><br>
+            Telepon: <strong>0831-6142-2617</strong><br>
+            Email: <strong>info@bersih-laundry.com</strong>
+        </div>
     </footer>
 
 </body>
