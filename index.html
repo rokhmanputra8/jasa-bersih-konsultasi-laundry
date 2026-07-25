@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Bersih-Bersih &amp; Konsultasi Laundry</title>
+    
+    <!-- ======================================================== -->
+    <!-- GOOGLE ANALYTICS 4 (GA4) INTEGRATION -->
+    <!-- ======================================================== -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+
+    <!-- ======================================================== -->
+    <!-- META PIXEL (FACEBOOK PIXEL) INTEGRATION -->
+    <!-- ======================================================== -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', 'ID_PIXEL_FACEBOOK_ANDA');
+      fbq('track', 'PageView');
+    </script>
+    <noscript>
+      <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=ID_PIXEL_FACEBOOK_ANDA&ev=PageView&noscript=1"/>
+    </noscript>
+    <!-- ======================================================== -->
+
+    <style>
+        :root {
+            --primary-color: #0b5ed7;
+            --primary-hover: #0a4eb4;
+            --success-color: #25D366;
+            --success-hover: #20ba5a;
+            --text-dark: #212529;
+            --text-light: #6c757d;
+            --bg-light: #f8f9fa;
+        }
+
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, var(--primary-color), #043d92);
+            color: #fff;
+            text-align: center;
+            padding: 60px 20px;
+        }
+
+        header h1 {
+            font-size: 36px;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            font-size: 24px;
+            margin: 0 0 15px 0;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+
+        header p {
+            font-size: 18px;
+            margin: 0 0 25px 0;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--success-color);
+            color: white;
+            padding: 14px 32px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 16px;
+            box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background-color: var(--success-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        section {
+            padding: 40px 20px;
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #fff;
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            font-size: 22px;
+            color: var(--primary-color);
+            margin-top: 0;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e9ecef;
+            padding-bottom: 10px;
+        }
+
+        .card ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .card li {
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+
+        .card li span {
+            margin-right: 10px;
+        }
+
+        .price-card, .portfolio-card {
+            grid-column: 1 / -1;
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .price-table th, .price-table td {
+            text-align: left;
+            padding: 12px 15px;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .price-table th {
+            background-color: #f1f3f5;
+            color: var(--text-dark);
+            font-weight: bold;
+        }
+
+        .price-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
+        .price-tag {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .note {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 14px;
+            color: #dc3545;
+            background-color: #fff3cd;
+            padding: 8px 15px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .gallery-item {
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            position: relative;
+            background-color: #eaeaea;
+            aspect-ratio: 4 / 3;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.08);
+        }
+
+        .contact-card {
+            text-align: center;
+            grid-column: 1 / -1;
+            max-width: 500px;
+            margin: 20px auto 0 auto;
+        }
+
+        .contact-card p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            background-color: #111;
+            color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 40px 20px;
+            margin-top: 60px;
+        }
+
+        footer h3 {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 20px;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        @media (max-width: 600px) {
+            header h1 { font-size: 28px; }
+            header h2 { font-size: 20px; }
+            header p { font-size: 16px; }
+            section { grid-template-columns: 1fr; padding: 20px; }
+            .price-table th, .price-table td { padding: 10px 8px; font-size: 14px; }
+            .gallery { grid-template-columns: repeat(2, 1fr); }
+        }
+    </style>
+    
+    <!-- Script Pelacak Event Klik Tombol -->
+    <script>
+        function lacakKlikWhatsApp(lokasiTombol) {
+            // 1. Mengirim data ke Google Analytics 4
+            if(typeof gtag !== 'undefined') {
+                gtag('event', 'click_whatsapp', {
+                    'button_location': lokasiTombol
+                });
+            }
+            
+            // 2. Mengirim data ke Meta Pixel (Facebook Pixel)
+            if(typeof fbq !== 'undefined') {
+                fbq('track', 'Contact', { 
+                    content_name: 'Tombol WhatsApp ' + lokasiTombol 
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <header>
+        <h1>Jasa Bersih-Bersih</h1>
+        <h2>&amp; Konsultasi Laundry</h2>
+        <p>Bersih • Cepat • Profesional • Terpercaya</p>
+        <a class="btn" href="https://wa.me/628XXXXXXXXXX?text=Halo%20saya%20ingin%20berkonsultasi%20tentang%20jasa%20bersih-bersih" target="_blank" onclick="lacakKlikWhatsApp('Header Top')">Hubungi WhatsApp</a>
+    </header>
+
+    <section>
+        <div class="card">
+            <h2>Layanan Kami</h2>
+            <ul>
+                <li><span>✅</span> General Cleaning</li>
+                <li><span>✅</span> Deep Cleaning</li>
+                <li><span>✅</span> Housekeeping</li>
+                <li><span>✅</span> Jasa Bersih Toren Air</li>
+                <li><span>✅</span> Konsultasi Laundry</li>
+                <li><span>✅</span> Pelatihan SOP Laundry</li>
+                <li><span>✅</span> Penanganan Noda Pakaian</li>
+                <li><span>✅</span> Efisiensi Operasional Laundry</li>
+            </ul>
+        </div>
+
+        <div class="card">
+            <h2>Mengapa Memilih Kami?</h2>
+            <ul>
+                <li><span>⭐</span> Berpengalaman</li>
+                <li><span>✨</span> Pekerjaan Rapi</li>
+                <li><span>💰</span> Harga Terjangkau</li>
+                <li><span>🤝</span> Pelayanan Ramah</li>
+                <li><span>💯</span> Hasil Bersih Maksimal</li>
+            </ul>
+        </div>
+
+        <div class="card price-card">
+            <h2>Daftar Harga Layanan</h2>
+            <table class="price-table">
+                <thead>
+                    <tr>
+                        <th>Jenis Layanan</th>
+                        <th>Tarif Harga</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bersih-Bersih Rumah (per hari)</td>
+                        <td class="price-tag">Rp 150.000 - Rp 300.000</td>
+                    </tr>
+                    <tr>
+                        <td>Deep Cleaning (per hari)</td>
+                        <td class="price-tag">Rp 300.000 - Rp 500.000</td>
+                    </tr>
+                    <tr>
+                        <td>Housekeeping (per bulan)</td>
+                        <td class="price-tag">Rp 2.000.000 - Rp 4.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Bersih Toren Air</td>
+                        <td class="price-tag">Rp 500.000 - Rp 1.000.000</td>
+                    </tr>
+                    <tr>
+                        <td>Konsultasi Laundry (per sesi)</td>
+                        <td class="price-tag">Rp 500.000</td>
+                    </tr>
+                    <tr>
+                        <td>Pelatihan SOP Laundry (per hari)</td>
+                        <td class="price-tag">Rp 750.000 - Rp 1.500.000</td>
+                    </tr>
+                    <tr>
+                        <td>Penanganan Noda Pakaian</td>
+                        <td class="price-tag">Rp 50.000 - Rp 200.000/item</td>
+                    </tr>
+                    <tr>
+                        <td>Audit Efisiensi Laundry</td>
+                        <td class="price-tag">Rp 1.000.000</td>
+                    </tr>
+                </tbody>
+            </table>
+            <span class="note">💡 Harga dapat disesuaikan sesuai lokasi, jenis pekerjaan, dan volume. Hubungi kami untuk penawaran khusus!</span>
+        </div>
+
+        <div class="card portfolio-card">
+            <h2>Portfolio & Galeri Pekerjaan</h2>
+            <p>Lihat hasil kerja profesional kami dari berbagai proyek:</p>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=General+Cleaning+1" alt="General Cleaning">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Deep+Cleaning+1" alt="Deep Cleaning">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Housekeeping+1" alt="Housekeeping">
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/400x300?text=Laundry+Service+1" alt="Laundry Service">
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h2>Hubungi Kami Sekarang</h2>
+            <p>Dapatkan penawaran terbaik dan konsultasi gratis untuk kebutuhan Anda</p>
+            <a class="btn" href="https://wa.me/628XXXXXXXXXX?text=Halo%20saya%20ingin%20berkonsultasi%20tentang%20jasa%20bersih-bersih" target="_blank" onclick="lacakKlikWhatsApp('Contact Section')">Chat WhatsApp Sekarang</a>
+        </div>
+    </section>
+
+    <footer>
+        <h3>Jasa Bersih-Bersih & Konsultasi Laundry</h3>
+        <p>&copy; 2024 Semua Hak Dilindungi. Kami siap melayani Anda dengan sepenuh hati.</p>
+        <p>Hubungi: <strong>WhatsApp</strong> | Email: <strong>info@bersih-laundry.com</strong></p>
+    </footer>
+
+</body>
+</html>
